@@ -3,67 +3,51 @@
 ## 目次
 
 ### 基本編
-- [環境構築](#chapter0)
-- [コメントアウト](#chapter2)
-- [変数](#chapter3)
-- [主要な型(タイプ)](#chapter4)
-    1. [文字列( str型 )](#chapter4-1)
-    1. [型の確認](#chapter4-2)
-    1. [キャスト(型変換)](#chapter4-3)
-- [演算子](#chapter5)
-    1. [is と == の違い](#chapter5-1)
-- [関数](#chapter6)
-    1. [関数の定義](#chapter6-1)
-    1. [関数の呼び出し](#chapter6-2)
-    1. [デフォルト引数](#chapter6-3)
-    1. [print関数](#chapter6-4)
-- [クラス](#chapter7)
-    1. [クラスの定義](#chapter7-1)
-    1. [インスタンス生成](#chapter7-2)
-- [リスト](#chapter8)
-- [シーケンス型](#chapter9)
-    1. [タプル](#chapter9-1)
-    1. [文字列](#chapter9-2)
-    1. [range](#chapter9-3)
-- [ディクショナリ](#chapter10)
-    1. [キーとバリューのリストを取得](#chapter10-1)
-    1. [値の追加と削除](#chapter10-2)
-- [for文](#chapter11)
-    1. [多言語っぽいforループ](#chapter11-1)
-    1. [リストを使ったforループ](#chapter11-2)
-    1. [ディクショナリを使ったforループ](#chapter11-3)
-- [if-elif-else文](#chapter12)
-- [while文](#chapter13)
-- [モジュールのインポート](#chapter14)
-    1. [import モジュール](#chapter14-1)
-    1. [from モジュール import クラス](#chapter14-2)
-    1. [import モジュール as エイリアス](#chapter14-3)
-    1. [自作モジュールのインポート](#chapter14-4)
-- [例外処理](#chapter15)
 
-
-### 応用編
-- [f-strings 記法](#application1)
-- [関数における5種類の引数](#application2)
-- [スライス](#application3)
-- [リストの内包表記](#application4)
-- [自作モジュールについて](#application5)
-- [スクレイピング](#application6)
-- [正規表現](#application7)
-- [プログラム中からUnixコマンドの実行](#application8)
-- [グラフ描写](#application9)
-- [仮想環境構築](#application10)
-
-
-### 基本的なモジュール
-
-- [re](#module_re)
-- [sys](#module_sys)
-- [time](#module_time)
-- [subprocess](#module_subprocess)
-- [pandas](#module_pandas)
-- [matplotlib](#module_matplotlib)
-- [requests](#module_requests)
+- [環境構築](chapter0)
+- [コメントアウト](chapter1)
+- [変数](chapter2)
+- [主要な型(タイプ)](chapter3)
+    - [1. 型の確認](chapter3-1)
+    - [2. キャスト(型変換)](chapter3-2)
+- [演算子](chapter4)
+    - [isと==の違い](chapter4-1)
+- [文字列(str型)](chapter5)
+- [シーケンス型](chapter6)
+- [リスト型](chapter7)
+    - [1. 要素の追加](chapter7-1)
+    - [2. 要素の削除](chapter7-2)
+    - [3. スライス](chapter7-3)
+    - [4. 内包表記](chapter7-4)
+- [タプル型](chapter8)
+- [文字列(str型)](chapter9)
+- [range()関数](chapter10)
+- [reversed()関数](chapter11)
+- [ディクショナリ型](chapter12)
+    - [1. キーとバリューのリスト取得](chapter12-1)
+    - [2. 値の追加と削除](chapter12-1)
+- [for構文](chapter13)
+    - [1. 多言語っぽいforループ](chapter13-1)
+    - [2. リストに対するforループ](chapter13-2)
+    - [3. ディクショナリに対するforループ](chapter13-3)
+- [if-elif-else構文](chapter14)
+- [while構文](chapter15)
+- [関数](chapter16)
+    - [1. 関数の定義](chapter16-1)
+    - [2. 関数の呼び出し](chapter16-2)
+    - [3. デフォルト引数](chapter16-3)
+    - [4. 可変長位置引数](chapter16-3)
+    - [5. 可変長キーワード引数](chapter16-3)
+- [クラス](chapter17)
+- [モジュールのインポート](chapter18)
+    - [1. import モジュール](chapter18-1)
+    - [2. from モジュール import クラス/関数](chapter18-2)
+    - [3. import モジュール as エイリアス](chapter18-3)
+    - [4. 自作モジュールのインポート](chapter18-4)
+- [例外処理](chapter19)
+- [正規表現](chapter20)
+- [プログラム中からUnixコマンドを実行](chapter21)
+- [仮想環境](chapter22)
 
 
 <a id="chapter0"></a>
@@ -108,7 +92,7 @@ $ type python
 
 等で取得して対応する.
 
-<a id="chapter2"></a>
+<a id="chapter1"></a>
 
 ## コメントアウト
 
@@ -119,7 +103,7 @@ x = 10 # ここはコメント
 y = 12 # yに12を代入！
 ```
 
-<a id="chapter3"></a>
+<a id="chapter2"></a>
 
 ## 変数
 
@@ -139,7 +123,7 @@ x = "Taro" # 変数自体には型がないので, 同じ変数にまた別の�
 print(x + "さんこんにちは！")
 ```
 
-<a id="chapter4"></a>
+<a id="chapter3"></a>
 
 ## 主要な型(タイプ)
 
@@ -156,7 +140,7 @@ print(x + "さんこんにちは！")
 | ディクショナリ | 複数の値の羅列, 値に対する添字を設定する |
 | タプル | リストの定数版 |
 
-<a id="chapter4-2"></a>
+<a id="chapter3-1"></a>
 
 ### 2. 型の確認
 type関数で行う
@@ -165,7 +149,7 @@ type関数で行う
 type("我が名は山田太郎なり！") # str を返す
 ```
 
-<a id="chapter4-3"></a>
+<a id="chapter3-2"></a>
 
 ### 3. キャスト(型変換)
 
@@ -179,7 +163,7 @@ age = 15
 print(name + "さんの年齢は, " + str(age) + "歳です.")
 ```
 
-<a id="chapter5"></a>
+<a id="chapte4"></a>
 
 ## 演算子
 
@@ -210,7 +194,7 @@ print(name + "さんの年齢は, " + str(age) + "歳です.")
 | is | 同じ( True/Falseを返す ) | x is y |
 | in | 含むかどうかの判定( True/Falseを返す ) | "a" in "Taro" |
 
-<a id="chapter5-1"></a>
+<a id="chapter4-1"></a>
 
 ### 1. is と == の違い
 
@@ -241,7 +225,7 @@ type(x) is int  # True
 ```
 
 
-<a id="chapter4-1"></a>
+<a id="chapter4-2"></a>
 
 ## 文字列( str型 )
 文字列は,
@@ -315,7 +299,7 @@ f"{<変数>:<オプション1><オプション2><オプション3>}"
 | 16進数表記① | x |  |  |
 | 2進数表記② | #b |  |  |
 
-<a id="chapter9"></a>
+<a id="chapter5"></a>
 
 ## シーケンス型
 
@@ -331,7 +315,7 @@ f"{<変数>:<オプション1><オプション2><オプション3>}"
 
 などがある.
 
-<a id="chapter8"></a>
+<a id="chapter6"></a>
 
 ## リスト
 
@@ -344,6 +328,7 @@ Taro = ["Taro", 20, "1999年1月1日", "100"]
 print(Taro[0] + "さんは" + str(Taro[1]) + "歳です")
 ```
 
+<a id="chapter6-1"></a>
 
 ### 要素の追加
 
@@ -363,6 +348,8 @@ sample_list = [0, 1, 2]
 sample_list[3] = 3 # index out of range error
 ```
 
+<a id="chapter6-2"></a>
+
 ### 要素の削除
 
 - リスト.pop()
@@ -375,6 +362,8 @@ popメソッドの削除インデックスを指定するデフォルト引数�
 指定したとこから削除したいならインデックスを渡す.
 
 ちなみに, popメソッドは削除した値を戻り値として返すので, 取り除いた値を取得することもできる.
+
+<a id="chapter6-3"></a>
 
 ### スライス
 
@@ -409,6 +398,7 @@ print(l[1:3])  # [20, 30]
 print(l[1:-1])  # [20, 30]
 ```
 
+<a id="chapter6-4"></a>
 
 ### 内包表記
 
@@ -420,7 +410,7 @@ print(l2)  # [20, 40, 60, 80]
 
 しっかりしたfor文を書くほどじゃないときとかに使う.
 
-<a id="chapter9-1"></a>
+<a id="chapter7"></a>
 
 ## タプル
 
@@ -432,7 +422,7 @@ print(l2)  # [20, 40, 60, 80]
 t = (1, 2, 3)
 ```
 
-<a id="chapter9-2"></a>
+<a id="chapter8"></a>
 
 ## 文字列
 
@@ -445,7 +435,7 @@ name = "Taro"
 listed_name = list(name)  # ['T', 'a', 'r', 'o']
 ```
 
-<a id="chapter9-3"></a>
+<a id="chapter9"></a>
 
 ## range() 関数
 
@@ -465,7 +455,7 @@ range3 = range(1, 5, 2)  # [1, 3]
 
 ただ, print(range1) しても range(0, 5)としか返してくれないから中身みたければ, list でキャストする必要あり.
 
-<a id="chapter9-4"></a>
+<a id="chapter10"></a>
 
 ## reversed() 関数
 
@@ -487,7 +477,7 @@ sample2 = range(5, -1, -1)
 sample1 = reversed(range(6))
 ```
 
-<a id="chapter10"></a>
+<a id="chapter11"></a>
 
 ## ディクショナリ
 
@@ -507,7 +497,7 @@ data_dict = { # 1行に書いてもおけ
 print( data_dict["name"] + "さんおはよう世界" )
 ```
 
-<a id="chapter10-1"></a>
+<a id="chapter11-1"></a>
 
 ### 1. キーとバリューのリストを取得
 
@@ -521,7 +511,7 @@ values = data_dict.values() # dict_values(['Taro', 20, '100', 'ひま'])
 keys = list(keys) # ['name', 'age', 'id', '自己紹介']
 ```
 
-<a id="chapter10-2"></a>
+<a id="chapter11-2"></a>
 
 ### 2. 値の追加と削除
 
@@ -546,7 +536,7 @@ poped_value = dict1.pop("three")
 ## poped_value = 4
 ```
 
-<a id="chapter11"></a>
+<a id="chapter12"></a>
 
 ## for文
 
@@ -560,7 +550,7 @@ for <変数> in <シーケンス型>:
 
 リスト(かリストライクなもの)を用意してあげて, リストの中身を順番に変数に渡すっていう動作をする.
 
-<a id="chapter11-1"></a>
+<a id="chapter12-1"></a>
 
 ### 1. 多言語っぽいforループ
 
@@ -577,7 +567,7 @@ print()
 
 こんな感じ.
 
-<a id="chapter11-2"></a>
+<a id="chapter12-2"></a>
 
 ### 2. リストを使ったforループ
 
@@ -589,7 +579,7 @@ for name in names:
     print(name)
 ```
 
-<a id="chapter11-3"></a>
+<a id="chapter12-3"></a>
 
 ### 3. ディクショナリを使ったforループ
 
@@ -603,7 +593,7 @@ for token in list(data_dic):
     print(token)
 ```
 
-<a id="chapter12"></a>
+<a id="chapter13"></a>
 
 ## if-elif-else文
 
@@ -638,7 +628,7 @@ def introduction(intro=""):
         print("自己紹介がないよ")
 ```
 
-<a id="chapter13"></a>
+<a id="chapter14"></a>
 
 ## while文
 
@@ -654,13 +644,13 @@ while(True):
 
 特に書くことない.
 
-<a id="chapter6"></a>
+<a id="chapter15"></a>
 
 ## 関数
 
 関数について.
 
-<a id="chapter6-1"></a>
+<a id="chapter15-1"></a>
 
 ### 1. 関数の定義
 
@@ -678,7 +668,7 @@ def hello_message(name):
 
 引数がない関数にしたいなら引数無しで定義すれば良いし, 返り値をなしで設計したければreturn文を書かなければ良いだけ.
 
-<a id="chapter6-2"></a>
+<a id="chapter15-2"></a>
 
 ### 2. 関数の呼び出し
 
@@ -689,7 +679,7 @@ message = hello_message("Taro")
 print(message)
 ```
 
-<a id="chapter6-3"></a>
+<a id="chapter15-3"></a>
 
 ### 3. デフォルト引数
 
@@ -723,6 +713,8 @@ print("たろう")
 
 みたいにすればおけ.
 
+<a id="chapter15-4"></a>
+
 ### 4. 可変長位置引数
 
 引数の数を指定することなく, タプルで全ての引数を受け取る.
@@ -736,6 +728,8 @@ def sample(*args):
 
 sample("AA", "BB", "CC")  # ('AA', 'BB', 'CC')
 ```
+
+<a id="chapter15-5"></a>
 
 ### 5. 可変長キーワード引数
 
@@ -753,7 +747,7 @@ sample(A="AA", B="BB", C="CC")  # {'A': 'AA', 'B': 'BB', 'C': 'CC'}
 
 定義する側的には便利だけど, 引数の定義だけみればだいたいなにを渡せば良いかわかる通常の引数とデフォルト引数に対して, 可変長の2つはなにを求めているのかわかりにくくて好きじゃない.
 
-<a id="chapter7"></a>
+<a id="chapter16"></a>
 
 ## クラス
 
@@ -800,7 +794,7 @@ human1.name  # インスタンス変数にアクセス
 ゆえに, self.<メソッド名> や self.<変数名> でインスタンス自身からメソッドを呼び出したり, インスタンス変数にアクセスしたりできる.
 
 
-<a id="chapter14"></a>
+<a id="chapter17"></a>
 
 ## モジュールのインポート
 
@@ -810,7 +804,7 @@ human1.name  # インスタンス変数にアクセス
 1. from モジュール import クラス
 1. import モジュール as エイリアス
 
-<a id="chapter14-1"></a>
+<a id="chapter17-1"></a>
 
 ### 1. import モジュール
 
@@ -824,7 +818,7 @@ sample_class_instance = sample_module.sample_class()
 
 sample_class使うときにsample_module.sample_class()て書くのは非生産的.
 
-<a id="chapter14-2"></a>
+<a id="chapter17-2"></a>
 
 ### 2. from モジュール import クラス
 
@@ -838,7 +832,7 @@ sample_class_instance = sample_class()
 
 これなら長くなくて良き.
 
-<a id="chapter14-3"></a>
+<a id="chapter17-3"></a>
 
 ### 3. import モジュール as エイリアス
 
@@ -852,7 +846,7 @@ import sample_module as sm
 sample_class_instance = sm.sample_class()
 ```
 
-<a id="chapter14-4"></a>
+<a id="chapter17-4"></a>
 
 ### 4. 自作モジュールのインポート
 
@@ -877,7 +871,7 @@ import hoge
 
 のようにすることでも手軽にインポートができる.
 
-<a id="chapter15"></a>
+<a id="chapter18"></a>
 
 ## 例外処理
 
@@ -945,7 +939,7 @@ except : # あらゆる例外をキャッチ
     pass
 ```
 
-<a id="application7"></a>
+<a id="chapter19"></a>
 
 ## 正規表現
 
@@ -959,7 +953,7 @@ searched = re.find_all("検索文字列", "被検索文字列") # 結果リス�
 
 検索文字列に関して正規表現を使える
 
-<a id="application8"></a>
+<a id="chapter20"></a>
 
 ## プログラム中からUnixコマンドを実行
 
@@ -977,7 +971,7 @@ run_commands("ls -l")  # ls -lのようにオプション付きもOK
 
 標準でないコマンド(シェルスクリプトの自作コマンドなど)もすべて実行できる.
 
-<a id="application9"></a>
+<a id="chapter21"></a>
 
 ## 仮想環境構築
 
